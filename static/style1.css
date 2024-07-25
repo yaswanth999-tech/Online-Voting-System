@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f0f0f0, #fafafa);
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 15px;
+    box-shadow: 8px 8px 15px #b8b8b8, -8px -8px 15px #ffffff;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 8px 8px 15px #b8b8b8, -8px -8px 15px #ffffff;
+    margin-top: 20px;
+}
+
+label {
+    color: #555;
+    font-weight: bold;
+}
+
+body.results-page input[type=text], 
+body.results-page input[type=password], 
+body.results-page select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 5px #b8b8b8, inset -2px -2px 5px #ffffff;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px #b8b8b8, -4px -4px 8px #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #45a049, #4CAF50);
+    box-shadow: 2px 2px 4px #b8b8b8, -2px -2px 4px #ffffff;
+}
+.form-footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-footer a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    box-shadow: 8px 8px 15px #b8b8b8, -8px -8px 15px #ffffff;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+}
+
+th {
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    color: white;
+    box-shadow: inset 2px 2px 5px #b8b8b8, inset -2px -2px 5px #ffffff;
+}
+
+.alert {
+    margin-top: 20px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #b8b8b8, -4px -4px 8px #ffffff;
+}
+
+.alert-container {
+    margin-bottom: 20px;
+}

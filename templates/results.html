@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    <script>
+        // Countdown timer function
+        function startCountdown(seconds) {
+            let counter = seconds;
+
+            const interval = setInterval(() => {
+                document.getElementById('countdown').innerText = counter;
+                counter--;
+
+                if (counter < 0) {
+                    clearInterval(interval);
+                    window.location.href = "{{ url_for('index') }}";
+                }
+            }, 1000);
+        }
+
+        // Start the countdown when the page loads
+        window.onload = function() {
+            startCountdown(5);
+        };
+    </script>
+</head>
+<body>
+    <div class="container mt-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert-container">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="container mt-4">
+        <h1>Voting Results</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Candidate</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result._id }}</td>
+                        <td>{{ result.count }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="alert alert-info text-center">
+            You will be redirected to the home page in <span id="countdown">5</span> seconds.
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
